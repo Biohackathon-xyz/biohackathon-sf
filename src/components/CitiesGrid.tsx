@@ -7,7 +7,7 @@ const cities = [
     name: "San Francisco",
     image: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29",
     subdomain: "sf",
-    date: "13.06-22.06 2025"
+    date: "June 13 - 22, 2025"
   },
   {
     name: "London",
