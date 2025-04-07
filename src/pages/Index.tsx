@@ -8,6 +8,7 @@ import Partners from '@/components/Partners';
 import ParticipationInfo from '@/components/ParticipationInfo';
 import DeploymentInfo from '@/components/DeploymentInfo';
 import CityExample from '@/components/CityExample';
+import PreviousYears from '@/components/PreviousYears';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -18,6 +19,7 @@ const Index = () => {
         <CitiesGrid />
         <GlobalAwards />
         <ParticipationInfo />
+        <PreviousYears />
         <Sponsors />
         <Partners />
         <CityExample />
