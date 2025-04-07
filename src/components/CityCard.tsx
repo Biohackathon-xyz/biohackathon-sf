@@ -17,7 +17,7 @@ const CityCard: React.FC<CityCardProps> = ({ name, image, subdomain, className }
 
   return (
     <div 
-      className={cn("city-card cursor-pointer aspect-[4/3]", className)}
+      className={cn("city-card cursor-pointer aspect-[4/3] border border-gray-200", className)}
       onClick={handleClick}
     >
       <img 

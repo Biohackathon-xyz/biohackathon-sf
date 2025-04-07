@@ -54,11 +54,11 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				biohack: {
-					primary: '#4C5FD5',
-					secondary: '#18A999',
-					accent: '#9b87f5',
-					light: '#E5DEFF',
-					dark: '#1A1F2C'
+					primary: '#000000',
+					secondary: '#333333',
+					accent: '#666666',
+					light: '#f5f5f5',
+					dark: '#0a0a0a'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',

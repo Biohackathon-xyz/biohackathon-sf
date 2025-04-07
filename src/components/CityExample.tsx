@@ -33,34 +33,34 @@ const CityExample: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div>
-              <h3 className="text-2xl font-smythe text-biohack-primary mb-4">Tracks</h3>
+              <h3 className="text-2xl font-smythe text-black mb-4">Tracks</h3>
               <ul className="space-y-2">
-                <li className="p-3 bg-biohack-light rounded-lg">Synthetic Biology</li>
-                <li className="p-3 bg-biohack-light rounded-lg">Biomedical Devices</li>
-                <li className="p-3 bg-biohack-light rounded-lg">Environmental Monitoring</li>
-                <li className="p-3 bg-biohack-light rounded-lg">DIY Lab Equipment</li>
+                <li className="p-3 bg-gray-100 rounded-lg">Synthetic Biology</li>
+                <li className="p-3 bg-gray-100 rounded-lg">Biomedical Devices</li>
+                <li className="p-3 bg-gray-100 rounded-lg">Environmental Monitoring</li>
+                <li className="p-3 bg-gray-100 rounded-lg">DIY Lab Equipment</li>
               </ul>
             </div>
             
             <div>
-              <h3 className="text-2xl font-smythe text-biohack-primary mb-4">Local Awards</h3>
+              <h3 className="text-2xl font-smythe text-black mb-4">Local Awards</h3>
               <div className="space-y-3">
                 <Card>
                   <CardContent className="p-4">
                     <div className="font-bold">1st Place</div>
-                    <div className="text-biohack-secondary">$2,000 + Lab Equipment</div>
+                    <div className="text-gray-700">$2,000 + Lab Equipment</div>
                   </CardContent>
                 </Card>
                 <Card>
                   <CardContent className="p-4">
                     <div className="font-bold">2nd Place</div>
-                    <div className="text-biohack-secondary">$1,000 + Mentorship</div>
+                    <div className="text-gray-700">$1,000 + Mentorship</div>
                   </CardContent>
                 </Card>
                 <Card>
                   <CardContent className="p-4">
                     <div className="font-bold">3rd Place</div>
-                    <div className="text-biohack-secondary">$500 + Networking Opportunity</div>
+                    <div className="text-gray-700">$500 + Networking Opportunity</div>
                   </CardContent>
                 </Card>
               </div>
@@ -68,7 +68,7 @@ const CityExample: React.FC = () => {
           </div>
           
           <div className="mb-8">
-            <h3 className="text-2xl font-smythe text-biohack-primary mb-4">Advisors & Judges</h3>
+            <h3 className="text-2xl font-smythe text-black mb-4">Advisors & Judges</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
               {[1, 2, 3, 4].map((i) => (
                 <div key={i} className="text-center">
@@ -80,14 +80,27 @@ const CityExample: React.FC = () => {
             </div>
           </div>
           
-          <div>
-            <h3 className="text-2xl font-smythe text-biohack-primary mb-4">Local Partners</h3>
-            <div className="flex flex-wrap gap-4 justify-center">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <div key={i} className="bg-gray-100 p-4 rounded-lg w-40 h-20 flex items-center justify-center">
-                  Partner {i}
-                </div>
-              ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <h3 className="text-2xl font-smythe text-black mb-4">Local Partners</h3>
+              <div className="flex flex-wrap gap-4 justify-center">
+                {[1, 2, 3].map((i) => (
+                  <div key={i} className="bg-gray-100 p-4 rounded-lg w-40 h-20 flex items-center justify-center">
+                    Partner {i}
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div>
+              <h3 className="text-2xl font-smythe text-black mb-4">Local Sponsors</h3>
+              <div className="flex flex-wrap gap-4 justify-center">
+                {[1, 2, 3].map((i) => (
+                  <div key={i} className="bg-gray-100 p-4 rounded-lg w-40 h-20 flex items-center justify-center border border-gray-200">
+                    Sponsor {i}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
