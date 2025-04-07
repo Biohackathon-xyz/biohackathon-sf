@@ -17,11 +17,19 @@ const Index = () => {
       <Header />
       <main>
         <CitiesGrid />
-        <GlobalAwards />
-        <ParticipationInfo />
-        <PreviousYears />
-        <Sponsors />
-        <Partners />
+        <section id="awards">
+          <GlobalAwards />
+        </section>
+        <section id="participation">
+          <ParticipationInfo />
+        </section>
+        <section id="previous-years">
+          <PreviousYears />
+        </section>
+        <section id="sponsors">
+          <Sponsors />
+          <Partners />
+        </section>
         <CityExample />
         <DeploymentInfo />
       </main>

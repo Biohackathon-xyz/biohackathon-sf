@@ -6,10 +6,11 @@ interface CityCardProps {
   name: string;
   image: string;
   subdomain: string;
+  date: string;
   className?: string;
 }
 
-const CityCard: React.FC<CityCardProps> = ({ name, image, subdomain, className }) => {
+const CityCard: React.FC<CityCardProps> = ({ name, image, subdomain, date, className }) => {
   const handleClick = () => {
     // In a real implementation, this would navigate to the subdomain
     window.open(`https://${subdomain}.biohackathon.xyz`, '_blank');
@@ -26,7 +27,10 @@ const CityCard: React.FC<CityCardProps> = ({ name, image, subdomain, className }
         className="w-full h-full object-cover"
       />
       <div className="city-card-overlay">
-        <h3 className="city-card-title">{name}</h3>
+        <div className="flex flex-col">
+          <h3 className="city-card-title">{name}</h3>
+          <p className="text-white text-sm md:text-base mt-1">{date}</p>
+        </div>
       </div>
     </div>
   );
