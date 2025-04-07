@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
 
 const ParticipationInfo: React.FC = () => {
   return (
@@ -22,9 +23,23 @@ const ParticipationInfo: React.FC = () => {
               DIY biohacking in a collaborative environment.
             </p>
           </div>
-          <Button size="lg" variant="secondary" className="bg-white text-biohack-primary hover:bg-gray-100">
-            Register Now
-          </Button>
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+            <Button 
+              size="lg" 
+              variant="secondary" 
+              className="bg-white text-biohack-primary hover:bg-gray-100 font-medium"
+            >
+              Register Now
+              <ArrowRight className="ml-1 h-4 w-4" />
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="bg-transparent border-white text-white hover:bg-white hover:text-biohack-primary font-medium"
+            >
+              Host In Your City
+            </Button>
+          </div>
         </div>
       </div>
     </section>
