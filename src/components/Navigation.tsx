@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { 
   NavigationMenu, 
   NavigationMenuContent, 
@@ -12,6 +12,11 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const Navigation: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -65,7 +70,14 @@ const Navigation: React.FC = () => {
                     </li>
                   ))}
                   <li className="pt-2">
-                    <div data-tf-live="01JRACGDCMZHAKR0TKESJHXTC8"></div>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button className="w-full">Host in Your City</Button>
+                      </DialogTrigger>
+                      <DialogContent className="p-0 bg-transparent border-none max-w-3xl h-[80vh]">
+                        <div data-tf-live="01JRACGDCMZHAKR0TKESJHXTC8" className="w-full h-full"></div>
+                      </DialogContent>
+                    </Dialog>
                   </li>
                 </ul>
               </div>
@@ -90,7 +102,14 @@ const Navigation: React.FC = () => {
               </NavigationMenuList>
             </NavigationMenu>
             
-            <div data-tf-live="01JRACGDCMZHAKR0TKESJHXTC8"></div>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button>Host in Your City</Button>
+              </DialogTrigger>
+              <DialogContent className="p-0 bg-transparent border-none max-w-3xl h-[80vh]">
+                <div data-tf-live="01JRACGDCMZHAKR0TKESJHXTC8" className="w-full h-full"></div>
+              </DialogContent>
+            </Dialog>
           </div>
         )}
       </div>
