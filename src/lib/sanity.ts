@@ -1,23 +1,26 @@
 
-import { createClient } from '@sanity/client';
-import imageUrlBuilder from '@sanity/image-url';
-import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
+// This is a stub file to replace the previous Sanity client
+// It provides the urlFor function that components expect, but just returns the original URL
 
-// Sanity project configuration
+export type SanityImageSource = string | { asset?: { _ref?: string } } | null;
+
 export const config = {
-  projectId: 'jze2b0zl',
-  dataset: 'production',
-  apiVersion: '2025-04-08', // Current date
-  useCdn: true,
+  projectId: 'removed',
+  dataset: 'removed',
+  apiVersion: '2025-04-08',
+  useCdn: false,
 };
 
-// Create a Sanity client
-export const sanityClient = createClient(config);
-
-// Set up the image URL builder
-const builder = imageUrlBuilder(sanityClient);
-
-// Helper function to generate image URLs
-export function urlFor(source: SanityImageSource) {
-  return builder.image(source);
+// Helper function to generate image URLs (simplified version)
+export function urlFor(source: SanityImageSource): { url: () => string } {
+  if (!source) return { url: () => '' };
+  
+  // If it's a string, return it directly
+  if (typeof source === 'string') {
+    return { url: () => source };
+  }
+  
+  // If it has an asset with _ref, it was a Sanity image, just return empty string
+  // In a real app, you'd convert this to a URL, but we're removing Sanity
+  return { url: () => '' };
 }

@@ -4,30 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useGlobalAwards } from '@/hooks/useSanityData';
 
 const GlobalAwards: React.FC = () => {
-  // Fetch awards from Sanity
-  const { data: sanityAwards, isLoading, error } = useGlobalAwards();
-
-  // Fallback data in case Sanity data isn't available yet
-  const fallbackAwards = [
-    {
-      title: "Grand Challenge Award",
-      prize: "$10,000",
-      description: "For the most innovative solution with global impact potential"
-    },
-    {
-      title: "Open Science Champion",
-      prize: "$5,000",
-      description: "For exemplary open collaboration and documentation"
-    },
-    {
-      title: "DIY Biohacking Excellence",
-      prize: "$3,000",
-      description: "For creativity in accessible biohacking approaches"
-    }
-  ];
-
-  // Use fallback data if Sanity data isn't available
-  const awards = sanityAwards?.length ? sanityAwards : fallbackAwards;
+  // Fetch awards from mock data
+  const { data: awards, isLoading, error } = useGlobalAwards();
 
   // Loading state
   if (isLoading) {
@@ -58,7 +36,7 @@ const GlobalAwards: React.FC = () => {
 
   // Error state
   if (error) {
-    console.error("Error loading global awards from Sanity:", error);
+    console.error("Error loading global awards:", error);
   }
 
   return (
@@ -68,7 +46,7 @@ const GlobalAwards: React.FC = () => {
           Global Awards
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {awards.map((award) => (
+          {awards?.map((award) => (
             <Card key={award.title} className="border-2 border-biohack-primary bg-white">
               <CardHeader className="text-center pb-2">
                 <CardTitle className="font-smythe text-2xl text-biohack-primary">{award.title}</CardTitle>

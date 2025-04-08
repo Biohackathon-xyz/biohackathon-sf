@@ -1,54 +1,11 @@
+
 import React from 'react';
 import CityCard from './CityCard';
 import { useCities } from '@/hooks/useSanityData';
-import { urlFor } from '@/lib/sanity';
 
 const CitiesGrid: React.FC = () => {
-  // Fetch cities from Sanity
+  // Fetch cities from our mock data hook
   const { data: cities, isLoading, error } = useCities();
-
-  // Fallback data in case Sanity data isn't available yet
-  const fallbackCities = [
-    {
-      name: "San Francisco",
-      image: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29",
-      subdomain: "sf",
-      date: "June 13 - 22, 2025"
-    },
-    {
-      name: "London",
-      image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad",
-      subdomain: "london",
-      date: "July 5 - 6, 2025"
-    },
-    {
-      name: "Boston",
-      image: "https://images.unsplash.com/photo-1501979376754-2ff867a4f659",
-      subdomain: "boston",
-      date: "June 2025"
-    },
-    {
-      name: "Prague",
-      image: "https://images.unsplash.com/photo-1592906209472-a36b1f3782ef",
-      subdomain: "prague",
-      date: "June 2025"
-    },
-    {
-      name: "Timișoara",
-      image: "https://images.unsplash.com/photo-1566209259189-5fe63e28693f?q=80&w=2697&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      subdomain: "timisoara",
-      date: "June 2025"
-    },
-    {
-      name: "Gdynia",
-      image: "https://images.unsplash.com/photo-1577091144216-0782c3a71b8d?q=80&w=3552&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      subdomain: "gdynia",
-      date: "June 2025"
-    }
-  ];
-
-  // Use fallback data if Sanity data isn't available
-  const citiesToDisplay = cities?.length ? cities : fallbackCities;
 
   // Loading state
   if (isLoading) {
@@ -70,7 +27,7 @@ const CitiesGrid: React.FC = () => {
 
   // Error state
   if (error) {
-    console.error("Error loading cities from Sanity:", error);
+    console.error("Error loading cities:", error);
   }
 
   return (
@@ -80,11 +37,11 @@ const CitiesGrid: React.FC = () => {
           Biohackathon Cities
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {citiesToDisplay.map((city) => (
+          {cities?.map((city) => (
             <CityCard
               key={city.name}
               name={city.name}
-              image={city._type === 'city' && city.image ? urlFor(city.image).url() : city.image}
+              image={city.image}
               subdomain={city.subdomain}
               date={city.date}
             />
