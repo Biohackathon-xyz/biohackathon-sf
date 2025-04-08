@@ -3,21 +3,21 @@ import { createClient } from '@sanity/client';
 import imageUrlBuilder from '@sanity/image-url';
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
-// Your Sanity project configuration
+// Sanity project configuration
 export const config = {
-  projectId: 'jze2b0zl', // Confirmed project ID
+  projectId: 'jze2b0zl',
   dataset: 'production',
-  apiVersion: '2023-05-03', // Use the latest API version
-  useCdn: true, // For faster response, but won't include the latest changes immediately
+  apiVersion: '2024-04-08', // Today's date
+  useCdn: true,
 };
 
 // Create a Sanity client
 export const sanityClient = createClient(config);
 
-// Create an image URL builder
+// Set up the image URL builder
 const builder = imageUrlBuilder(sanityClient);
 
-// Helper function to get image URLs
+// Helper function to generate image URLs
 export function urlFor(source: SanityImageSource) {
   return builder.image(source);
 }

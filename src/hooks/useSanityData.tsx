@@ -3,14 +3,14 @@ import { useQuery } from '@tanstack/react-query';
 import { sanityClient } from '@/lib/sanity';
 
 // Generic hook for fetching data from Sanity
-export function useSanityData<T>(query: string, params?: any) {
+export function useSanityData<T>(query: string, params?: Record<string, any>) {
   return useQuery({
     queryKey: ['sanity', query, params],
     queryFn: async () => {
       try {
         return await sanityClient.fetch<T>(query, params);
       } catch (error) {
-        console.error(`Error fetching Sanity data: ${error}`);
+        console.error(`Error fetching Sanity data:`, error);
         throw error;
       }
     },
