@@ -11,8 +11,8 @@ const PreviousYears: React.FC = () => {
           <div className="flex flex-col">
             <div className="aspect-[4/3] overflow-hidden rounded-lg mb-6">
               <img 
-                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=1200&auto=format&fit=crop" 
-                alt="Cambridge Biohackathon participants" 
+                src="/lovable-uploads/437cee30-3864-455c-965a-4d9e52c28f94.png" 
+                alt="Cambridge Biohackathon collage of participants" 
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
@@ -20,8 +20,8 @@ const PreviousYears: React.FC = () => {
           <div className="flex flex-col">
             <div className="aspect-[4/3] overflow-hidden rounded-lg mb-6">
               <img 
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop" 
-                alt="Cambridge Biohackathon lab work" 
+                src="/lovable-uploads/4d180eb1-a586-4687-8c64-b57bf1474154.png" 
+                alt="Cambridge Biohackathon participants working together" 
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
@@ -29,7 +29,7 @@ const PreviousYears: React.FC = () => {
         </div>
         
         <div className="max-w-4xl mx-auto">
-          <h3 className="text-3xl font-smythe mb-4">Pilot Biohackathon — Cambridge, UK</h3>
+          <h3 className="text-3xl font-smythe mb-4">Pilot Biohackathon, 2024 — Cambridge, UK</h3>
           <p className="text-lg mb-4 font-raleway">
             Our journey began with the inaugural Biohackathon in Cambridge, bringing together innovators, scientists, and DIY biology enthusiasts from across the globe.
           </p>
@@ -40,7 +40,7 @@ const PreviousYears: React.FC = () => {
             <li className="text-base">Collaborative environment fostering innovation in DIY biology</li>
           </ul>
           <p className="text-base italic">
-            The Cambridge pilot set the foundation for our global expansion, proving that community-driven biohacking events can create meaningful opportunities for innovation outside traditional academic settings.
+            Pilot in 2024 went better than expected and proved the idea. Global edition in 2025 will be a base for global partnerships and sponsors which will allow us to provide grants for smaller cities in 2026.
           </p>
         </div>
       </div>
