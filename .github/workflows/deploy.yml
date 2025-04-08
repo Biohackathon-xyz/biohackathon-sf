@@ -44,6 +44,15 @@ jobs:
           mkdir -p dist/admin
           cp -R public/admin/* dist/admin/
           
+      - name: Copy netlify.toml to build
+        run: |
+          cp netlify.toml dist/
+          
+      - name: Copy netlify functions
+        run: |
+          mkdir -p dist/.netlify/functions
+          cp -R netlify/functions/* dist/.netlify/functions/ || echo "No functions to copy"
+          
       - name: Copy content folder for Git-based CMS
         run: |
           mkdir -p dist/content

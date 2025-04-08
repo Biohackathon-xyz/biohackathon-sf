@@ -1,11 +1,10 @@
-
 # Decap CMS Configuration
 backend:
   name: github
   repo: Biohackathon-xyz/biohackathon-global # Your actual GitHub repo
   branch: main # Branch to update
   base_url: https://biohackathon.netlify.app
-  auth_endpoint: auth
+  auth_endpoint: api/auth # This is important - changed from 'auth' to 'api/auth'
 
 # Media and public folders
 media_folder: "public/images/uploads" # Media will be stored in the repo under public/images/uploads
