@@ -37,8 +37,12 @@ const ParticipationInfo: React.FC = () => {
               size="lg" 
               variant="outline" 
               className="bg-transparent border-white text-white hover:bg-white hover:text-biohack-primary font-medium"
-              as="a"
-              href="#host-in-your-city"
+              onClick={() => {
+                const element = document.getElementById('host-in-your-city');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
             >
               Host In Your City
             </Button>

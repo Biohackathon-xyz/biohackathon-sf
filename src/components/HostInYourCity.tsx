@@ -1,7 +1,19 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const HostInYourCity: React.FC = () => {
+  useEffect(() => {
+    // This ensures the typeform script is loaded after the component mounts
+    const script = document.createElement('script');
+    script.src = "//embed.typeform.com/next/embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+    
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <section id="host-in-your-city" className="py-16 bg-gradient-to-br from-biohack-dark to-biohack-primary text-white">
       <div className="container mx-auto">
@@ -12,7 +24,6 @@ const HostInYourCity: React.FC = () => {
           </p>
           <div className="bg-white rounded-lg p-4 shadow-lg" style={{ height: "600px" }}>
             <div data-tf-live="01JRACGDCMZHAKR0TKESJHXTC8" style={{ height: "100%" }}></div>
-            <script src="//embed.typeform.com/next/embed.js"></script>
           </div>
         </div>
       </div>
