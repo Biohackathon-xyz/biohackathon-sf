@@ -1,5 +1,5 @@
 
-   # Netlify CMS Configuration
+   # Decap CMS Configuration
    backend:
      name: github
      repo: Biohackathon-xyz/biohackathon-global # Your actual GitHub repo
@@ -100,4 +100,3 @@
                  - {label: "Name", name: "name", widget: "string"}
                  - {label: "Logo", name: "logo", widget: "image", required: false}
                  - {label: "URL", name: "url", widget: "string", required: false}
-   
