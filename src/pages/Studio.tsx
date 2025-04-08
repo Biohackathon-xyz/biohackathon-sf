@@ -4,9 +4,8 @@ import { config } from '@/lib/sanity';
 
 const Studio = () => {
   useEffect(() => {
-    // Redirect to Sanity Studio
-    const studioUrl = `https://${config.projectId}.sanity.studio/desk`;
-    window.location.href = studioUrl;
+    // Direct redirect to Sanity Studio
+    window.location.href = `https://${config.projectId}.sanity.studio/desk`;
   }, []);
 
   return (
