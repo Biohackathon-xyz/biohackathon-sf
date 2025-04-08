@@ -17,7 +17,9 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <Header />
       <main>
-        <CitiesGrid />
+        <section id="cities" className="pt-20 mt-4">
+          <CitiesGrid />
+        </section>
         <section id="awards" className="pt-20 mt-4">
           <GlobalAwards />
         </section>

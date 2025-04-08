@@ -19,8 +19,8 @@ const Footer: React.FC = () => {
               Breaking barriers in biohacking and open science.
             </p>
           </div>
-          <div className="md:flex md:justify-end md:pr-8">
-            <div>
+          <div className="md:text-right">
+            <div className="inline-block text-left">
               <h4 className="font-raleway font-bold text-lg mb-3">Connect With Us</h4>
               <ul className="space-y-2">
                 <li>
