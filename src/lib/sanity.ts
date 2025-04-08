@@ -7,7 +7,7 @@ import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 export const config = {
   projectId: 'jze2b0zl',
   dataset: 'production',
-  apiVersion: '2024-04-08', // Today's date
+  apiVersion: '2025-04-08', // Current date
   useCdn: true,
 };
 
