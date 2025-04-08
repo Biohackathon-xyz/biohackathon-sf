@@ -23,8 +23,8 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           </div>
           <div className="mt-8 md:mt-0">
             <img 
-              src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=500&auto=format&fit=crop" 
-              alt="Lab equipment" 
+              src="/lovable-uploads/photo-1605810230434-7631ac76ec81.jpeg" 
+              alt="Group of people around a display of video screens" 
               className="rounded-lg h-32 md:h-48 w-auto object-cover shadow-md"
             />
           </div>
