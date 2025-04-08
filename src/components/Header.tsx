@@ -11,7 +11,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   return (
     <header className={cn("w-full bg-white", className)}>
       <Navigation />
-      <div className="container mx-auto py-12 md:py-20">
+      <div className="container mx-auto pt-20 py-12 md:py-20">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="max-w-3xl">
             <h1 className="text-5xl md:text-7xl font-smythe text-black">
