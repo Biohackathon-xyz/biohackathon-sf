@@ -30,7 +30,7 @@ const ParticipationInfo: React.FC = () => {
               className="bg-white text-biohack-primary hover:bg-gray-100 font-medium"
               asChild
             >
-              <a href="https://lu.ma/ggyihtsk" target="_blank" rel="noopener noreferrer">
+              <a href="https://lu.ma/biohacksf25" target="_blank" rel="noopener noreferrer">
                 Register Now
                 <ArrowRight className="ml-1 h-4 w-4" />
               </a>

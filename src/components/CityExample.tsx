@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -9,12 +8,6 @@ const CityExample: React.FC = () => {
         <h2 className="text-3xl md:text-4xl font-smythe text-center mb-6">
           San Francisco Biohackathon.xyz
         </h2>
-        <div className="text-center mb-12">
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Each city subdomain follows this template but can be customized by local organizers
-            through the connected CMS.
-          </p>
-        </div>
         
         <div className="border-2 border-dashed border-gray-300 p-4 rounded-lg mb-12">
           <div className="relative h-64 md:h-96 rounded-lg overflow-hidden mb-8">

@@ -42,9 +42,12 @@ const GlobalAwards: React.FC = () => {
   return (
     <section className="py-16 bg-biohack-light">
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-smythe text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-smythe text-center mb-4">
           Awards
         </h2>
+        <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+          In addition to city-specific prizes, participants will compete for these prestigious global awards
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {awards?.map((award) => (
             <Card key={award.title} className="border-2 border-biohack-primary bg-white">

@@ -14,9 +14,6 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
       <div className="container mx-auto pt-20 py-12 md:py-20">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="md:w-2/5">
-            <h1 className="text-3xl md:text-5xl font-smythe text-black">
-              Global Biohackathon.xyz
-            </h1>
             <p className="text-base md:text-lg font-raleway text-gray-700 mt-4">
               Bringing DIY biology, innovation, and open science to cities around the world — because online hackathons suck
             </p>
