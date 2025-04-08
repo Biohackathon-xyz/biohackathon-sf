@@ -4,8 +4,8 @@ import {
   Facebook, 
   Instagram, 
   Linkedin, 
-  Twitter, 
-  Discord 
+  Twitter,
+  MessageSquare 
 } from 'lucide-react';
 
 const Footer: React.FC = () => {
@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <a href="https://discord.gg/rDCgVT3nne" className="hover:text-biohack-secondary transition-colors flex items-center gap-2">
-                  <Discord size={16} /> Discord
+                  <MessageSquare size={16} /> Discord
                 </a>
               </li>
               <li>
