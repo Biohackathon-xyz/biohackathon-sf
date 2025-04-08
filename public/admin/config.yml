@@ -1,3 +1,4 @@
+
 # Decap CMS Configuration
 backend:
   name: github

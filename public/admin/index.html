@@ -26,12 +26,57 @@
       .css-1itwf9a {
         background-color: #16171b !important;
       }
+      
+      /* Add loading indicator styles */
+      .loading-wrapper {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255,255,255,0.8);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .loading-wrapper.visible {
+        display: flex;
+      }
+      .loading-message {
+        margin-top: 20px;
+        font-size: 16px;
+        color: #333;
+      }
     </style>
   </head>
   <body>
+    <!-- Loading indicator -->
+    <div class="loading-wrapper" id="loading">
+      <div class="loading-spinner">
+        <svg width="38" height="38" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="#1a202c">
+          <g fill="none" fill-rule="evenodd">
+            <g transform="translate(1 1)" stroke-width="2">
+              <circle stroke-opacity=".5" cx="18" cy="18" r="18"/>
+              <path d="M36 18c0-9.94-8.06-18-18-18">
+                <animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="1s" repeatCount="indefinite"/>
+              </path>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div class="loading-message">Authenticating with GitHub...</div>
+    </div>
+    
     <!-- Include the script that builds the page and powers Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script>
+      // Check if we're coming back from an auth redirect
+      if (window.location.hash && window.location.hash.includes('token=')) {
+        document.getElementById('loading').classList.add('visible');
+      }
+      
       // Initialize Netlify Identity for authentication
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => {
@@ -42,6 +87,16 @@
           }
         });
       }
+      
+      // Handle potential errors
+      window.addEventListener('unhandledrejection', function(event) {
+        console.error('Authentication error:', event.reason);
+        // Show a user-friendly error if authentication fails
+        if (document.getElementById('loading').classList.contains('visible')) {
+          document.getElementById('loading').innerHTML = '<div class="loading-message" style="color: #e53e3e">Authentication failed. Please try again or contact site administrator.</div>' +
+            '<button onclick="window.location.href=\'/admin/\'" style="margin-top: 16px; padding: 8px 16px; background: #1a202c; color: white; border: none; border-radius: 4px; cursor: pointer;">Back to Login</button>';
+        }
+      });
     </script>
   </body>
 </html>
