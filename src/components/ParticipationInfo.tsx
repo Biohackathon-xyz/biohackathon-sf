@@ -1,9 +1,22 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 
 const ParticipationInfo: React.FC = () => {
+  useEffect(() => {
+    // Load Typeform script
+    const script = document.createElement('script');
+    script.src = "//embed.typeform.com/next/embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Clean up script on unmount if needed
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <section className="py-16 bg-gradient-to-br from-biohack-primary to-biohack-accent text-white">
       <div className="container mx-auto">
@@ -32,13 +45,9 @@ const ParticipationInfo: React.FC = () => {
               Register Now
               <ArrowRight className="ml-1 h-4 w-4" />
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="bg-transparent border-white text-white hover:bg-white hover:text-biohack-primary font-medium"
-            >
-              Host In Your City
-            </Button>
+            <div className="inline-block">
+              <div data-tf-live="01JRACGDCMZHAKR0TKESJHXTC8"></div>
+            </div>
           </div>
         </div>
       </div>
