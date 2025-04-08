@@ -29,13 +29,13 @@ const cities = [
   },
   {
     name: "Timișoara",
-    image: "https://images.unsplash.com/photo-1579025778860-755dddf8ee75",
+    image: "https://images.unsplash.com/photo-1566209259189-5fe63e28693f?q=80&w=2697&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     subdomain: "timisoara",
     date: "July 2025"
   },
   {
     name: "Gdynia",
-    image: "https://images.unsplash.com/photo-1560127882-5440ffca4264",
+    image: "https://images.unsplash.com/photo-1577091144216-0782c3a71b8d?q=80&w=3552&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     subdomain: "gdynia",
     date: "September 2025"
   }
