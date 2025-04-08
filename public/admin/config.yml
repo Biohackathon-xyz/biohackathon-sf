@@ -4,8 +4,8 @@ backend:
   name: github
   repo: Biohackathon-xyz/biohackathon-global # Your actual GitHub repo
   branch: main # Branch to update
-  base_url: https://api.netlify.com
-  auth_endpoint: auth # This uses Netlify's authentication service
+  base_url: https://biohackathon.netlify.app
+  auth_endpoint: auth
 
 # Media and public folders
 media_folder: "public/images/uploads" # Media will be stored in the repo under public/images/uploads
