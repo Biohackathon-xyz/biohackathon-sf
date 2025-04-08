@@ -10,6 +10,7 @@ import DeploymentInfo from '@/components/DeploymentInfo';
 import CityExample from '@/components/CityExample';
 import PreviousYears from '@/components/PreviousYears';
 import Footer from '@/components/Footer';
+import HostInYourCity from '@/components/HostInYourCity';
 
 const Index = () => {
   return (
@@ -32,6 +33,9 @@ const Index = () => {
         </section>
         <CityExample />
         <DeploymentInfo />
+        <section id="host-in-your-city">
+          <HostInYourCity />
+        </section>
       </main>
       <Footer />
     </div>

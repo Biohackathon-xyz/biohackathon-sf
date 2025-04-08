@@ -2,12 +2,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-  DialogTitle,
-} from "@/components/ui/dialog";
 
 const ParticipationInfo: React.FC = () => {
   return (
@@ -39,25 +33,15 @@ const ParticipationInfo: React.FC = () => {
               <ArrowRight className="ml-1 h-4 w-4" />
             </Button>
             
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="bg-transparent border-white text-white hover:bg-white hover:text-biohack-primary font-medium"
-                >
-                  Host In Your City
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="p-0 bg-transparent border-none max-w-3xl h-[80vh]">
-                <DialogTitle className="sr-only">Host In Your City Form</DialogTitle>
-                <iframe 
-                  data-tf-live="01JRACGDCMZHAKR0TKESJHXTC8"
-                  className="w-full h-full"
-                  title="Host In Your City Form"
-                ></iframe>
-              </DialogContent>
-            </Dialog>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="bg-transparent border-white text-white hover:bg-white hover:text-biohack-primary font-medium"
+              as="a"
+              href="#host-in-your-city"
+            >
+              Host In Your City
+            </Button>
           </div>
         </div>
       </div>

@@ -12,12 +12,6 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-  DialogTitle,
-} from "@/components/ui/dialog";
 
 const Navigation: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -29,6 +23,7 @@ const Navigation: React.FC = () => {
     { name: 'Participation', href: '#participation' },
     { name: 'Previous Years', href: '#previous-years' },
     { name: 'Sponsors', href: '#sponsors' },
+    { name: 'Host In Your City', href: '#host-in-your-city' },
   ];
 
   const toggleMobileMenu = () => {
@@ -70,21 +65,6 @@ const Navigation: React.FC = () => {
                       </a>
                     </li>
                   ))}
-                  <li className="pt-2">
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <Button className="w-full">Host in Your City</Button>
-                      </DialogTrigger>
-                      <DialogContent className="p-0 bg-transparent border-none max-w-3xl h-[80vh]">
-                        <DialogTitle className="sr-only">Host In Your City Form</DialogTitle>
-                        <iframe 
-                          data-tf-live="01JRACGDCMZHAKR0TKESJHXTC8"
-                          className="w-full h-full"
-                          title="Host In Your City Form"
-                        ></iframe>
-                      </DialogContent>
-                    </Dialog>
-                  </li>
                 </ul>
               </div>
             )}
@@ -107,20 +87,6 @@ const Navigation: React.FC = () => {
                 ))}
               </NavigationMenuList>
             </NavigationMenu>
-            
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button>Host in Your City</Button>
-              </DialogTrigger>
-              <DialogContent className="p-0 bg-transparent border-none max-w-3xl h-[80vh]">
-                <DialogTitle className="sr-only">Host In Your City Form</DialogTitle>
-                <iframe 
-                  data-tf-live="01JRACGDCMZHAKR0TKESJHXTC8"
-                  className="w-full h-full"
-                  title="Host In Your City Form"
-                ></iframe>
-              </DialogContent>
-            </Dialog>
           </div>
         )}
       </div>
