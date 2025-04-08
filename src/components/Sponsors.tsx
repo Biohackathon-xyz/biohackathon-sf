@@ -12,7 +12,7 @@ const Sponsors: React.FC = () => {
       <section className="py-16">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-smythe text-center mb-12">
-            Loading Global Sponsors...
+            Loading Sponsors...
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
             {[1, 2, 3, 4].map(i => (
@@ -26,14 +26,14 @@ const Sponsors: React.FC = () => {
 
   // Error state
   if (error) {
-    console.error("Error loading global sponsors:", error);
+    console.error("Error loading sponsors:", error);
   }
 
   return (
     <section className="py-16">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-smythe text-center mb-12">
-          Global Sponsors
+          Sponsors
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
           {sponsors?.map((sponsor) => (

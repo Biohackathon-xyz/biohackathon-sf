@@ -7,7 +7,7 @@ const CityExample: React.FC = () => {
     <section className="py-16">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-smythe text-center mb-6">
-          Sample City Page Layout
+          San Francisco Biohackathon.xyz
         </h2>
         <div className="text-center mb-12">
           <p className="text-gray-600 max-w-2xl mx-auto">

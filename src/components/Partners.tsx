@@ -12,7 +12,7 @@ const Partners: React.FC = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-smythe text-center mb-12">
-            Loading Global Partners...
+            Loading Partners...
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
             {[1, 2, 3, 4, 5, 6].map(i => (
@@ -26,14 +26,14 @@ const Partners: React.FC = () => {
 
   // Error state
   if (error) {
-    console.error("Error loading global partners:", error);
+    console.error("Error loading partners:", error);
   }
 
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-smythe text-center mb-12">
-          Global Partners
+          Partners
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
           {partners?.map((partner) => (

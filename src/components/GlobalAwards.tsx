@@ -13,7 +13,7 @@ const GlobalAwards: React.FC = () => {
       <section className="py-16 bg-biohack-light">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-smythe text-center mb-12">
-            Loading Global Awards...
+            Loading Awards...
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[1, 2, 3].map(i => (
@@ -36,14 +36,14 @@ const GlobalAwards: React.FC = () => {
 
   // Error state
   if (error) {
-    console.error("Error loading global awards:", error);
+    console.error("Error loading awards:", error);
   }
 
   return (
     <section className="py-16 bg-biohack-light">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-smythe text-center mb-12">
-          Global Awards
+          Awards
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {awards?.map((award) => (
