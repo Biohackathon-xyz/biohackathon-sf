@@ -117,15 +117,18 @@ export async function handler(event, context) {
       ? `https://${event.headers.host}/admin/`
       : 'https://biohackathon.netlify.app/admin/';
     
+    // FIX: Format the hash parameters correctly without a leading slash
+    const hashParams = new URLSearchParams({
+      provider: "github",
+      token: accessToken,
+      state: state || ""
+    }).toString();
+    
     // Redirect back to the admin page with the auth info in the hash
     return {
       statusCode: 303, // See Other
       headers: {
-        Location: `${redirectUrl}#${new URLSearchParams({
-          provider: "github",
-          token: accessToken,
-          state: state || ""
-        }).toString()}`
+        Location: `${redirectUrl}#${hashParams}`
       },
       body: ""
     };
