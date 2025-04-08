@@ -1,5 +1,12 @@
 
 import React from 'react';
+import { 
+  Facebook, 
+  Instagram, 
+  Linkedin, 
+  Twitter, 
+  Discord 
+} from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -15,9 +22,31 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-raleway font-bold text-lg mb-3">Connect With Us</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-biohack-secondary transition-colors">Twitter</a></li>
-              <li><a href="#" className="hover:text-biohack-secondary transition-colors">GitHub</a></li>
-              <li><a href="#" className="hover:text-biohack-secondary transition-colors">Discord</a></li>
+              <li>
+                <a href="https://x.com/BioHackathonXYZ" className="hover:text-biohack-secondary transition-colors flex items-center gap-2">
+                  <Twitter size={16} /> X
+                </a>
+              </li>
+              <li>
+                <a href="https://discord.gg/rDCgVT3nne" className="hover:text-biohack-secondary transition-colors flex items-center gap-2">
+                  <Discord size={16} /> Discord
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/biohackathon.xyz/" className="hover:text-biohack-secondary transition-colors flex items-center gap-2">
+                  <Instagram size={16} /> Instagram
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/profile.php?id=61567106677112" className="hover:text-biohack-secondary transition-colors flex items-center gap-2">
+                  <Facebook size={16} /> Facebook
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/biohackathon-xyz" className="hover:text-biohack-secondary transition-colors flex items-center gap-2">
+                  <Linkedin size={16} /> LinkedIn
+                </a>
+              </li>
             </ul>
           </div>
           <div>
