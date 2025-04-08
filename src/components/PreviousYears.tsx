@@ -1,5 +1,7 @@
 
 import React from 'react';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
+import { Card, CardContent } from '@/components/ui/card';
 
 const PreviousYears: React.FC = () => {
   return (
@@ -7,25 +9,30 @@ const PreviousYears: React.FC = () => {
       <div className="container mx-auto">
         <h2 className="text-4xl md:text-5xl font-smythe mb-8 text-center">Previous Years</h2>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          <div className="flex flex-col">
-            <div className="aspect-[4/3] overflow-hidden rounded-lg mb-6">
-              <img 
-                src="/lovable-uploads/437cee30-3864-455c-965a-4d9e52c28f94.png" 
-                alt="Cambridge Biohackathon collage of participants" 
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-          </div>
-          <div className="flex flex-col">
-            <div className="aspect-[4/3] overflow-hidden rounded-lg mb-6">
-              <img 
-                src="/lovable-uploads/4d180eb1-a586-4687-8c64-b57bf1474154.png" 
-                alt="Cambridge Biohackathon participants working together" 
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <Card className="shadow-md overflow-hidden">
+            <CardContent className="p-0">
+              <AspectRatio ratio={1} className="w-full">
+                <img 
+                  src="/lovable-uploads/437cee30-3864-455c-965a-4d9e52c28f94.png" 
+                  alt="Cambridge Biohackathon collage of participants" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </AspectRatio>
+            </CardContent>
+          </Card>
+          
+          <Card className="shadow-md overflow-hidden">
+            <CardContent className="p-0">
+              <AspectRatio ratio={1} className="w-full">
+                <img 
+                  src="/lovable-uploads/4d180eb1-a586-4687-8c64-b57bf1474154.png" 
+                  alt="Cambridge Biohackathon participants working together" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </AspectRatio>
+            </CardContent>
+          </Card>
         </div>
         
         <div className="max-w-4xl mx-auto">
