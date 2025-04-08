@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { config } from '@/lib/sanity';
 
 const AdminPanel: React.FC = () => {
   return (
@@ -16,32 +17,31 @@ const AdminPanel: React.FC = () => {
         <Button
           size="lg"
           className="bg-black hover:bg-gray-800 text-white"
-          onClick={() => window.open('https://your-project-id.sanity.studio/', '_blank')}
+          onClick={() => window.open(`https://${config.projectId}.sanity.studio/`, '_blank')}
         >
           Open Sanity Studio
         </Button>
       </div>
 
       <div className="p-6 bg-gray-50 rounded-lg">
-        <h2 className="text-2xl font-semibold mb-4">Getting Started</h2>
+        <h2 className="text-2xl font-semibold mb-4">Getting Started with Sanity</h2>
         <ol className="list-decimal pl-5 space-y-3">
           <li>
-            If you haven't yet created your Sanity project, visit{' '}
+            Access your Sanity project dashboard at{' '}
             <a
-              href="https://www.sanity.io/get-started"
+              href={`https://www.sanity.io/manage/project/${config.projectId}`}
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:underline"
             >
-              Sanity's Get Started page
+              Sanity Project Dashboard
             </a>
           </li>
           <li>
-            Follow the instructions to create a new project and set up your Sanity Studio.
+            Configure your schemas in the Sanity Studio to match the data structure needed for this website.
           </li>
-          <li>After setup, replace "your-project-id" in the src/lib/sanity.ts file with your actual Sanity project ID.</li>
-          <li>Customize your schema in the Sanity Studio to match the data structure needed for this website.</li>
-          <li>You'll need to create schemas for cities, global awards, sponsors, and partners.</li>
+          <li>Add content for cities, global awards, sponsors, and partners in the Sanity Studio.</li>
+          <li>Your content will automatically appear on the website once published.</li>
         </ol>
       </div>
 
