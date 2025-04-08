@@ -10,6 +10,7 @@ import CityExample from '@/components/CityExample';
 import PreviousYears from '@/components/PreviousYears';
 import Footer from '@/components/Footer';
 import HostInYourCity from '@/components/HostInYourCity';
+import Schedule from '@/components/Schedule';
 
 const Index = () => {
   return (
@@ -24,6 +25,9 @@ const Index = () => {
         </section>
         <section id="participation" className="pt-20 mt-4">
           <ParticipationInfo />
+        </section>
+        <section id="schedule" className="pt-20 mt-4">
+          <Schedule />
         </section>
         <section id="previous-years" className="pt-20 mt-4">
           <PreviousYears />
