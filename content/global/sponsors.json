@@ -1,0 +1,25 @@
+
+{
+  "sponsors": [
+    {
+      "name": "TechBio Ventures",
+      "logo": "https://placehold.co/200x80?text=TechBio+Ventures",
+      "url": "#"
+    },
+    {
+      "name": "OpenScience Foundation",
+      "logo": "https://placehold.co/200x80?text=OpenScience+Foundation",
+      "url": "#"
+    },
+    {
+      "name": "BioInnovate Labs",
+      "logo": "https://placehold.co/200x80?text=BioInnovate+Labs",
+      "url": "#"
+    },
+    {
+      "name": "Genomica Inc.",
+      "logo": "https://placehold.co/200x80?text=Genomica+Inc.",
+      "url": "#"
+    }
+  ]
+}

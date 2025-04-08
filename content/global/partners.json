@@ -1,0 +1,35 @@
+
+{
+  "partners": [
+    {
+      "name": "DIY Bio Association",
+      "logo": "https://placehold.co/180x60?text=DIY+Bio+Association",
+      "url": "#"
+    },
+    {
+      "name": "Academic Alliance",
+      "logo": "https://placehold.co/180x60?text=Academic+Alliance",
+      "url": "#"
+    },
+    {
+      "name": "BioMakers Network",
+      "logo": "https://placehold.co/180x60?text=BioMakers+Network",
+      "url": "#"
+    },
+    {
+      "name": "Global Science Forum",
+      "logo": "https://placehold.co/180x60?text=Global+Science+Forum",
+      "url": "#"
+    },
+    {
+      "name": "STEM Education Coalition",
+      "logo": "https://placehold.co/180x60?text=STEM+Education+Coalition",
+      "url": "#"
+    },
+    {
+      "name": "OpenLab Initiative",
+      "logo": "https://placehold.co/180x60?text=OpenLab+Initiative",
+      "url": "#"
+    }
+  ]
+}

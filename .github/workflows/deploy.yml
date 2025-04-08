@@ -39,6 +39,16 @@ jobs:
       - name: Build project
         run: npm run build
         
+      - name: Copy admin folder to build
+        run: |
+          mkdir -p dist/admin
+          cp -R public/admin/* dist/admin/
+          
+      - name: Copy content folder if using Git-based CMS
+        run: |
+          mkdir -p dist/content
+          cp -R content/* dist/content/ || echo "No content to copy"
+        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

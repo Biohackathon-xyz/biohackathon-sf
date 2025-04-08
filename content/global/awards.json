@@ -1,0 +1,20 @@
+
+{
+  "awards": [
+    {
+      "title": "Grand Challenge Award",
+      "prize": "$10,000",
+      "description": "For the most innovative solution with global impact potential"
+    },
+    {
+      "title": "Open Science Champion",
+      "prize": "$5,000",
+      "description": "For exemplary open collaboration and documentation"
+    },
+    {
+      "title": "DIY Biohacking Excellence",
+      "prize": "$3,000",
+      "description": "For creativity in accessible biohacking approaches"
+    }
+  ]
+}
