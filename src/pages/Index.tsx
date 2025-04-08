@@ -8,6 +8,7 @@ import ParticipationInfo from '@/components/ParticipationInfo';
 import CityExample from '@/components/CityExample';
 import Footer from '@/components/Footer';
 import Schedule from '@/components/Schedule';
+import HostInYourCity from '@/components/HostInYourCity';
 
 const Index = () => {
   return (
@@ -29,6 +30,9 @@ const Index = () => {
         <section id="sponsors" className="pt-20 mt-4">
           <Sponsors />
           <Partners />
+        </section>
+        <section id="host-in-your-city" className="pt-20 mt-4">
+          <HostInYourCity />
         </section>
       </main>
       <Footer />
