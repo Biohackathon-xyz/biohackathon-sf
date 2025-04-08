@@ -13,7 +13,7 @@ const cities = [
     name: "London",
     image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad",
     subdomain: "london",
-    date: "May 2025"
+    date: "July 5 - 6, 2025"
   },
   {
     name: "Boston",
