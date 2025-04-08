@@ -5,7 +5,7 @@ backend:
   repo: Biohackathon-xyz/biohackathon-global # Your actual GitHub repo
   branch: main # Branch to update
   base_url: https://biohackathon.netlify.app
-  auth_endpoint: api/auth # This points to the Netlify Function proxy
+  auth_endpoint: .netlify/functions/auth # Fix: Path without leading slash
   app_id: '' # Optional: Your GitHub App ID if you're using a GitHub App
 
 # Media and public folders

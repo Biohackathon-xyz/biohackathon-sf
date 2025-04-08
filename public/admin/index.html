@@ -98,14 +98,17 @@
         console.log("Hash detected:", window.location.hash);
         document.getElementById('loading').classList.add('visible');
         
-        // Fix: Properly parse the hash parameters
+        // Fix: Improved hash parsing to handle all formats
         var hashParams = {};
-        var hash = window.location.hash.substring(1);
+        var hash = window.location.hash.substring(1); // Remove the # character
         
-        // Handle both formats: with or without leading slash
+        // Remove leading slash if present
         if (hash.startsWith('/')) {
           hash = hash.substring(1);
         }
+        
+        // Handle both formats: regular params or just raw pairs
+        console.log("Parsing hash:", hash);
         
         // Split the hash string by & to get key-value pairs
         var pairs = hash.split('&');
@@ -161,7 +164,7 @@
             '<div style="margin-top: 20px; color: #e53e3e;">' +
             'Auth response detected but no token found. Please try again.' +
             '<div style="margin-top: 10px;">' +
-            '<button onclick="window.location.href=\'/api/auth?provider=github&site_id=biohackathon.netlify.app&scope=repo\'" ' +
+            '<button onclick="window.location.href=\'/.netlify/functions/auth?provider=github&site_id=biohackathon.netlify.app&scope=repo\'" ' +
             'style="padding: 8px 16px; background: #1a202c; color: white; border: none; border-radius: 4px; cursor: pointer;">' +
             'Retry GitHub Login' +
             '</button>' +
@@ -198,7 +201,7 @@
         if (document.getElementById('loading').classList.contains('visible') && !document.querySelector('body > div[class^="css"]')) {
           document.getElementById('loading').innerHTML += 
             '<div style="margin-top: 20px;">' +
-            '<button onclick="window.location.href=\'/api/auth?provider=github&site_id=biohackathon.netlify.app&scope=repo\'" ' +
+            '<button onclick="window.location.href=\'/.netlify/functions/auth?provider=github&site_id=biohackathon.netlify.app&scope=repo\'" ' +
             'style="padding: 8px 16px; background: #1a202c; color: white; border: none; border-radius: 4px; cursor: pointer;">' +
             'Manual GitHub Authentication' +
             '</button>' +
