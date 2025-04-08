@@ -93,84 +93,100 @@
         debugEl.style.display = 'block';
       }
       
-      // Check if we're coming back from an auth redirect
-      if (window.location.hash) {
-        console.log("Hash detected:", window.location.hash);
-        document.getElementById('loading').classList.add('visible');
+      // Function to parse hash parameters and set up the CMS
+      function setupAuth() {
+        // Display debugging info for hash parameter investigation
+        var rawHash = window.location.hash;
+        console.log("Raw hash value:", rawHash);
         
-        // Fix: Improved hash parsing to handle all formats
-        var hashParams = {};
-        var hash = window.location.hash.substring(1); // Remove the # character
-        
-        // Remove leading slash if present
-        if (hash.startsWith('/')) {
-          hash = hash.substring(1);
-        }
-        
-        // Handle both formats: regular params or just raw pairs
-        console.log("Parsing hash:", hash);
-        
-        // Split the hash string by & to get key-value pairs
-        var pairs = hash.split('&');
-        pairs.forEach(function(pair) {
-          var keyValue = pair.split('=');
-          if (keyValue.length === 2) {
-            hashParams[keyValue[0]] = decodeURIComponent(keyValue[1]);
+        if (rawHash && rawHash.length > 1) {
+          document.getElementById('loading').classList.add('visible');
+          
+          // Strip the leading # character
+          var hash = rawHash.substring(1);
+          
+          // If hash starts with a slash, remove it
+          if (hash.startsWith('/')) {
+            hash = hash.substring(1);
           }
-        });
-        
-        // Get provider and token from hash params
-        var provider = hashParams['provider'];
-        var token = hashParams['token'];
-        var state = hashParams['state'];
-        
-        // Show hash details (but strip any sensitive tokens)
-        var debugInfo = {
-          message: "Auth info detected in URL hash",
-          hash: hash,
-          parsedParams: {
-            provider: provider || "Not found",
-            hasToken: token ? "Yes" : "No",
-            hasState: state ? "Yes" : "No"
-          },
-          timestamp: new Date().toISOString()
-        };
-        
-        showDebugInfo(debugInfo);
-        
-        // If we have a token from GitHub OAuth, use it for CMS
-        if (provider === 'github' && token) {
-          console.log('GitHub auth successful, initializing CMS with token');
           
-          // Store token in local storage for the CMS
-          localStorage.setItem('netlify-cms-user', JSON.stringify({
-            token: {
-              access_token: token
-            }
-          }));
+          console.log("Processing hash:", hash);
           
-          // The loading indicator will be hidden once CMS loads
-          setTimeout(function() {
-            if (document.getElementById('loading').classList.contains('visible')) {
-              document.getElementById('loading').innerHTML += 
-                '<div style="margin-top: 20px; color: #e53e3e;">' +
-                'CMS is taking longer than usual to load. Please wait...' +
-                '</div>';
+          // Parse the hash parameters manually
+          var hashParams = {};
+          var pairs = hash.split('&');
+          pairs.forEach(function(pair) {
+            var parts = pair.split('=');
+            if (parts.length === 2) {
+              hashParams[parts[0]] = decodeURIComponent(parts[1]);
             }
-          }, 5000);
-        } else if (hash && !token) {
-          // If we have a hash but no token
-          document.getElementById('loading').innerHTML +=
-            '<div style="margin-top: 20px; color: #e53e3e;">' +
-            'Auth response detected but no token found. Please try again.' +
-            '<div style="margin-top: 10px;">' +
-            '<button onclick="window.location.href=\'/.netlify/functions/auth?provider=github&site_id=biohackathon.netlify.app&scope=repo\'" ' +
-            'style="padding: 8px 16px; background: #1a202c; color: white; border: none; border-radius: 4px; cursor: pointer;">' +
-            'Retry GitHub Login' +
-            '</button>' +
-            '</div>';
+          });
+          
+          // Get provider and token directly from hash params
+          var provider = hashParams['provider'];
+          var token = hashParams['token'];
+          var state = hashParams['state'];
+          
+          // Show debug info for diagnostics
+          var debugInfo = {
+            message: "Auth info detected in URL hash",
+            rawHash: rawHash,
+            processedHash: hash,
+            parsedParams: {
+              provider: provider || "Not found",
+              hasToken: token ? "Yes" : "No",
+              hasState: state ? "Yes" : "No"
+            },
+            timestamp: new Date().toISOString()
+          };
+          
+          showDebugInfo(debugInfo);
+          
+          // If we have a token from GitHub OAuth, use it for CMS
+          if (provider === 'github' && token) {
+            console.log('GitHub auth successful, initializing CMS with token');
+            
+            // Store token in local storage for the CMS
+            localStorage.setItem('netlify-cms-user', JSON.stringify({
+              token: {
+                access_token: token
+              }
+            }));
+            
+            // Remove the token from URL for security
+            if (history.replaceState) {
+              history.replaceState(null, null, window.location.pathname);
+            }
+            
+            // The loading indicator will be hidden once CMS loads
+            setTimeout(function() {
+              if (document.getElementById('loading').classList.contains('visible')) {
+                document.getElementById('loading').innerHTML += 
+                  '<div style="margin-top: 20px; color: #e53e3e;">' +
+                  'CMS is taking longer than usual to load. Please wait...' +
+                  '</div>';
+              }
+            }, 5000);
+          } else if (hash && !token) {
+            // If we have a hash but no token
+            document.getElementById('loading').innerHTML +=
+              '<div style="margin-top: 20px; color: #e53e3e;">' +
+              'Auth response detected but no token found. Please try again.' +
+              '<div style="margin-top: 10px;">' +
+              '<button onclick="window.location.href=\'/.netlify/functions/auth?provider=github&site_id=biohackathon.netlify.app&scope=repo\'" ' +
+              'style="padding: 8px 16px; background: #1a202c; color: white; border: none; border-radius: 4px; cursor: pointer;">' +
+              'Retry GitHub Login' +
+              '</button>' +
+              '</div>';
+          }
         }
       }
+      
+      // Run the auth setup on page load
+      window.addEventListener('DOMContentLoaded', setupAuth);
+      
+      // Also handle hash changes in case of SPA navigation
+      window.addEventListener('hashchange', setupAuth);
       
       // Initialize Netlify Identity for authentication
       if (window.netlifyIdentity) {

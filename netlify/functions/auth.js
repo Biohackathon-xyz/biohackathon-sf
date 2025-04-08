@@ -23,7 +23,7 @@ export async function handler(event, context) {
   const state = params.state;
   
   if (!code) {
-    console.error("No code provided in GitHub callback");
+    console.log("No code provided in GitHub callback, checking for initial auth request");
     // Check if this is the initial auth request that needs to redirect to GitHub
     if (params && params.provider === "github") {
       const siteId = params.site_id || "";
@@ -117,17 +117,17 @@ export async function handler(event, context) {
       ? `https://${event.headers.host}/admin/`
       : 'https://biohackathon.netlify.app/admin/';
     
-    // Fix: Construct the hash parameters properly
-    // Important: Don't use URLSearchParams as it encodes characters differently
+    // Directly include the token in fragment identifier (hash)
     const hashParams = `provider=github&token=${accessToken}&state=${state || ""}`;
     
-    console.log(`Redirecting to ${redirectUrl} with hash params`);
+    console.log(`Redirecting to ${redirectUrl} with hash: #${hashParams}`);
     
     // Redirect back to the admin page with the auth info in the hash
     return {
-      statusCode: 303, // See Other
+      statusCode: 302, // Found
       headers: {
-        Location: `${redirectUrl}#${hashParams}`
+        "Location": `${redirectUrl}#${hashParams}`,
+        "Cache-Control": "no-store"
       },
       body: ""
     };
