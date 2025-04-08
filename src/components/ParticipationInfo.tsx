@@ -6,6 +6,7 @@ import {
   Dialog,
   DialogContent,
   DialogTrigger,
+  DialogTitle,
 } from "@/components/ui/dialog";
 
 const ParticipationInfo: React.FC = () => {
@@ -49,7 +50,12 @@ const ParticipationInfo: React.FC = () => {
                 </Button>
               </DialogTrigger>
               <DialogContent className="p-0 bg-transparent border-none max-w-3xl h-[80vh]">
-                <div data-tf-live="01JRACGDCMZHAKR0TKESJHXTC8" className="w-full h-full"></div>
+                <DialogTitle className="sr-only">Host In Your City Form</DialogTitle>
+                <iframe 
+                  data-tf-live="01JRACGDCMZHAKR0TKESJHXTC8"
+                  className="w-full h-full"
+                  title="Host In Your City Form"
+                ></iframe>
               </DialogContent>
             </Dialog>
           </div>
