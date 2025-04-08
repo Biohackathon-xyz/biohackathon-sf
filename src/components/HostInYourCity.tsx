@@ -22,7 +22,7 @@ const HostInYourCity: React.FC = () => {
           <p className="text-center mb-8">
             Join our global community by organizing a Biohackathon in your city. Fill out the form below to get started!
           </p>
-          <div className="bg-white rounded-lg p-4 shadow-lg" style={{ height: "600px" }}>
+          <div className="bg-white rounded-lg p-4" style={{ height: "600px" }}>
             <div data-tf-live="01JRACGDCMZHAKR0TKESJHXTC8" style={{ height: "100%" }}></div>
           </div>
         </div>
