@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-biohack-dark text-white py-12 mt-20">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <h3 className="font-smythe text-2xl mb-4">Biohackathon.xyz</h3>
             <p className="text-sm opacity-80">
@@ -47,14 +47,6 @@ const Footer: React.FC = () => {
                   <Linkedin size={16} /> LinkedIn
                 </a>
               </li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-raleway font-bold text-lg mb-3">Resources</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="hover:text-biohack-secondary transition-colors">Start a Biohackathon</a></li>
-              <li><a href="#" className="hover:text-biohack-secondary transition-colors">Partner With Us</a></li>
-              <li><a href="#" className="hover:text-biohack-secondary transition-colors">Press Kit</a></li>
             </ul>
           </div>
         </div>

@@ -41,7 +41,7 @@ const PreviousYears: React.FC = () => {
             Our journey began with the inaugural Biohackathon in Cambridge, bringing together innovators, scientists, and DIY biology enthusiasts from across the globe.
           </p>
           <ul className="list-disc pl-6 mb-6 space-y-2">
-            <li className="text-base">£115,000 in non-dilutive awards distributed to groundbreaking projects</li>
+            <li className="text-base">$115,000 in non-dilutive awards distributed to groundbreaking projects</li>
             <li className="text-base">Access to state-of-the-art laboratory facilities for winning teams</li>
             <li className="text-base">Mentorship from leading experts in synthetic biology and biotech</li>
             <li className="text-base">Collaborative environment fostering innovation in DIY biology</li>
