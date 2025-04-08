@@ -18,22 +18,22 @@ const Index = () => {
       <Header />
       <main>
         <CitiesGrid />
-        <section id="awards">
+        <section id="awards" className="pt-20 mt-4">
           <GlobalAwards />
         </section>
-        <section id="participation">
+        <section id="participation" className="pt-20 mt-4">
           <ParticipationInfo />
         </section>
-        <section id="previous-years">
+        <section id="previous-years" className="pt-20 mt-4">
           <PreviousYears />
         </section>
-        <section id="sponsors">
+        <section id="sponsors" className="pt-20 mt-4">
           <Sponsors />
           <Partners />
         </section>
         <CityExample />
         <DeploymentInfo />
-        <section id="host-in-your-city">
+        <section id="host-in-your-city" className="pt-20 mt-4">
           <HostInYourCity />
         </section>
       </main>
