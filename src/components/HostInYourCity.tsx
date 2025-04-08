@@ -15,7 +15,7 @@ const HostInYourCity: React.FC = () => {
   }, []);
 
   return (
-    <section id="host-in-your-city" className="py-16 bg-gradient-to-br from-biohack-dark to-biohack-primary text-white">
+    <section id="host-in-your-city" className="py-16 bg-white text-black">
       <div className="container mx-auto">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-smythe mb-6 text-center">Host In Your City</h2>
