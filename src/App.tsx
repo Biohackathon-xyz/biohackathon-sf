@@ -19,7 +19,8 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/admin" element={<AdminPanel />} />
+            <Route path="/admin-panel" element={<AdminPanel />} />
+            <Route path="/admin" element={<Navigate to="/admin-panel" replace />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
