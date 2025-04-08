@@ -13,7 +13,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
       <Navigation />
       <div className="container mx-auto pt-20 py-12 md:py-20">
         <div className="flex flex-col md:flex-row items-center justify-between">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl md:w-2/3">
             <h1 className="text-5xl md:text-7xl font-smythe text-black">
               Global Biohackathon.xyz
             </h1>
@@ -21,11 +21,11 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               Bringing DIY biology, innovation, and open science to cities around the world — because online hackathons suck
             </p>
           </div>
-          <div className="mt-8 md:mt-0">
+          <div className="mt-8 md:mt-0 md:w-1/3 flex justify-center">
             <img 
               src="/lovable-uploads/5fb88901-6512-4107-8568-8937a00445ac.png" 
               alt="Steampunk octopus with mechanical enhancements" 
-              className="rounded-lg h-32 md:h-48 w-auto object-contain shadow-md"
+              className="rounded-lg h-40 md:h-64 w-auto object-contain"
             />
           </div>
         </div>
