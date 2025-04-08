@@ -7,7 +7,12 @@ export function useSanityData<T>(query: string, params?: any) {
   return useQuery({
     queryKey: ['sanity', query, params],
     queryFn: async () => {
-      return sanityClient.fetch<T>(query, params);
+      try {
+        return await sanityClient.fetch<T>(query, params);
+      } catch (error) {
+        console.error(`Error fetching Sanity data: ${error}`);
+        throw error;
+      }
     },
   });
 }
