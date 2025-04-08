@@ -18,7 +18,7 @@ const HostInYourCity: React.FC = () => {
     <section id="host-in-your-city" className="py-16 bg-white text-black">
       <div className="container mx-auto">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-smythe mb-6 text-center">Host In Your City</h2>
+          <h2 className="text-3xl md:text-4xl font-smythe mb-6 text-center">Host In Your City | Join Org Team</h2>
           <p className="text-center mb-8">
             Join our global community by organizing a Biohackathon in your city. Fill out the form below to get started!
           </p>
