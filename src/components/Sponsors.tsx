@@ -1,10 +1,34 @@
 
 import React from 'react';
-import { useGlobalSponsors } from '@/hooks/useSanityData';
+import { useLocalContent } from '@/hooks/useLocalContent';
 
 const Sponsors: React.FC = () => {
-  // Fetch sponsors from mock data
-  const { data: sponsors, isLoading, error } = useGlobalSponsors();
+  // Fetch sponsors from markdown content
+  const { data: sponsorsContent, isLoading, error } = useLocalContent('sponsors');
+
+  // Mock sponsors for fallback
+  const mockSponsors = [
+    {
+      name: "TechBio Ventures",
+      logo: "https://placehold.co/200x80?text=TechBio+Ventures",
+      url: "#"
+    },
+    {
+      name: "OpenScience Foundation",
+      logo: "https://placehold.co/200x80?text=OpenScience+Foundation",
+      url: "#"
+    },
+    {
+      name: "BioInnovate Labs",
+      logo: "https://placehold.co/200x80?text=BioInnovate+Labs",
+      url: "#"
+    },
+    {
+      name: "Genomica Inc.",
+      logo: "https://placehold.co/200x80?text=Genomica+Inc.",
+      url: "#"
+    }
+  ];
 
   // Loading state
   if (isLoading) {
@@ -35,23 +59,28 @@ const Sponsors: React.FC = () => {
         <h2 className="text-3xl md:text-4xl font-smythe text-center mb-12">
           Sponsors
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
-          {sponsors?.map((sponsor) => (
-            <a 
-              key={sponsor.name} 
-              href={sponsor.url} 
-              className="hover:opacity-80 transition-opacity"
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              <img 
-                src={sponsor.logo} 
-                alt={sponsor.name} 
-                className="max-h-20 w-auto"
-              />
-            </a>
-          ))}
-        </div>
+        
+        {sponsorsContent ? (
+          <div dangerouslySetInnerHTML={{ __html: sponsorsContent }} />
+        ) : (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
+            {mockSponsors.map((sponsor) => (
+              <a 
+                key={sponsor.name} 
+                href={sponsor.url} 
+                className="hover:opacity-80 transition-opacity"
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <img 
+                  src={sponsor.logo} 
+                  alt={sponsor.name} 
+                  className="max-h-20 w-auto"
+                />
+              </a>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

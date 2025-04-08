@@ -1,11 +1,30 @@
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { useGlobalAwards } from '@/hooks/useSanityData';
+import { useLocalContent } from '@/hooks/useLocalContent';
 
 const GlobalAwards: React.FC = () => {
-  // Fetch awards from mock data
-  const { data: awards, isLoading, error } = useGlobalAwards();
+  // Fetch awards from markdown content
+  const { data: awardsContent, isLoading, error } = useLocalContent('awards');
+
+  // Mock awards data for fallback
+  const mockAwards = [
+    {
+      title: "Grand Challenge Award",
+      prize: "$10,000",
+      description: "For the most innovative solution with global impact potential"
+    },
+    {
+      title: "Open Science Champion",
+      prize: "$5,000",
+      description: "For exemplary open collaboration and documentation"
+    },
+    {
+      title: "DIY Biohacking Excellence",
+      prize: "$3,000",
+      description: "For creativity in accessible biohacking approaches"
+    }
+  ];
 
   // Loading state
   if (isLoading) {
@@ -48,19 +67,24 @@ const GlobalAwards: React.FC = () => {
         <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12">
           In addition to city-specific prizes, participants will compete for <a href="https://global.biohackathon.xyz/" className="text-biohack-primary hover:underline">global awards</a>
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {awards?.map((award) => (
-            <Card key={award.title} className="border-2 border-biohack-primary bg-white">
-              <CardHeader className="text-center pb-2">
-                <CardTitle className="font-smythe text-2xl text-biohack-primary">{award.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                <div className="text-3xl font-bold text-biohack-secondary mb-3">{award.prize}</div>
-                <p className="text-gray-600">{award.description}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+
+        {awardsContent ? (
+          <div dangerouslySetInnerHTML={{ __html: awardsContent }} />
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {mockAwards.map((award) => (
+              <Card key={award.title} className="border-2 border-biohack-primary bg-white">
+                <CardHeader className="text-center pb-2">
+                  <CardTitle className="font-smythe text-2xl text-biohack-primary">{award.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <div className="text-3xl font-bold text-biohack-secondary mb-3">{award.prize}</div>
+                  <p className="text-gray-600">{award.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

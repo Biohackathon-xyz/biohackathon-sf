@@ -31,7 +31,7 @@ const Navigation: React.FC = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm py-4">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex-shrink-0">
-          <a href="/" className="text-2xl font-smythe">Biohackathon.xyz</a>
+          <a href="https://global.biohackathon.xyz/" className="text-2xl font-smythe">Biohackathon.xyz</a>
         </div>
         
         {isMobile ? (
