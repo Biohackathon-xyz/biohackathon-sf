@@ -1,102 +1,102 @@
 
-   # Decap CMS Configuration
-   backend:
-     name: github
-     repo: Biohackathon-xyz/biohackathon-global # Your actual GitHub repo
-     branch: main # Branch to update
-     base_url: https://api.netlify.com
-     auth_endpoint: auth # This uses Netlify's authentication service
+# Decap CMS Configuration
+backend:
+  name: github
+  repo: Biohackathon-xyz/biohackathon-global # Your actual GitHub repo
+  branch: main # Branch to update
+  base_url: https://api.netlify.com
+  auth_endpoint: auth # This uses Netlify's authentication service
 
-   # Media and public folders
-   media_folder: "public/images/uploads" # Media will be stored in the repo under public/images/uploads
-   public_folder: "/images/uploads" # The src attribute for uploaded media
+# Media and public folders
+media_folder: "public/images/uploads" # Media will be stored in the repo under public/images/uploads
+public_folder: "/images/uploads" # The src attribute for uploaded media
 
-   # Collections - Define the structure for your content
-   collections:
-     - name: "cities"
-       label: "City Pages"
-       folder: "content/cities"
-       create: true
-       slug: "{{slug}}"
-       fields:
-         - {label: "City Name", name: "name", widget: "string"}
-         - {label: "Subdomain", name: "subdomain", widget: "string"}
-         - {label: "Date", name: "date", widget: "string"}
-         - {label: "Featured Image", name: "image", widget: "image"}
-         - {label: "Description", name: "description", widget: "markdown"}
-         - label: "Tracks"
-           name: "tracks"
-           widget: "list"
-           fields:
-             - {label: "Track Name", name: "name", widget: "string"}
-         
-         - label: "Local Awards"
-           name: "awards"
-           widget: "list"
-           fields:
-             - {label: "Award Title", name: "title", widget: "string"}
-             - {label: "Prize", name: "prize", widget: "string"}
-             - {label: "Description", name: "description", widget: "string"}
-         
-         - label: "Advisors & Judges"
-           name: "judges"
-           widget: "list"
-           fields:
-             - {label: "Name", name: "name", widget: "string"}
-             - {label: "Institution", name: "institution", widget: "string"}
-             - {label: "Photo", name: "photo", widget: "image", required: false}
+# Collections - Define the structure for your content
+collections:
+  - name: "cities"
+    label: "City Pages"
+    folder: "content/cities"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "City Name", name: "name", widget: "string"}
+      - {label: "Subdomain", name: "subdomain", widget: "string"}
+      - {label: "Date", name: "date", widget: "string"}
+      - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Description", name: "description", widget: "markdown"}
+      - label: "Tracks"
+        name: "tracks"
+        widget: "list"
+        fields:
+          - {label: "Track Name", name: "name", widget: "string"}
+      
+      - label: "Local Awards"
+        name: "awards"
+        widget: "list"
+        fields:
+          - {label: "Award Title", name: "title", widget: "string"}
+          - {label: "Prize", name: "prize", widget: "string"}
+          - {label: "Description", name: "description", widget: "string"}
+      
+      - label: "Advisors & Judges"
+        name: "judges"
+        widget: "list"
+        fields:
+          - {label: "Name", name: "name", widget: "string"}
+          - {label: "Institution", name: "institution", widget: "string"}
+          - {label: "Photo", name: "photo", widget: "image", required: false}
 
-         - label: "Local Partners"
-           name: "partners"
-           widget: "list"
-           fields:
-             - {label: "Name", name: "name", widget: "string"}
-             - {label: "Logo", name: "logo", widget: "image", required: false}
-             - {label: "URL", name: "url", widget: "string", required: false}
+      - label: "Local Partners"
+        name: "partners"
+        widget: "list"
+        fields:
+          - {label: "Name", name: "name", widget: "string"}
+          - {label: "Logo", name: "logo", widget: "image", required: false}
+          - {label: "URL", name: "url", widget: "string", required: false}
 
-         - label: "Local Sponsors"
-           name: "sponsors"
-           widget: "list"
-           fields:
-             - {label: "Name", name: "name", widget: "string"}
-             - {label: "Logo", name: "logo", widget: "image", required: false}
-             - {label: "URL", name: "url", widget: "string", required: false}
+      - label: "Local Sponsors"
+        name: "sponsors"
+        widget: "list"
+        fields:
+          - {label: "Name", name: "name", widget: "string"}
+          - {label: "Logo", name: "logo", widget: "image", required: false}
+          - {label: "URL", name: "url", widget: "string", required: false}
 
-     - name: "global"
-       label: "Global Settings"
-       files:
-         - name: "awards"
-           label: "Global Awards"
-           file: "content/global/awards.json"
-           fields:
-             - label: "Awards"
-               name: "awards"
-               widget: "list"
-               fields:
-                 - {label: "Title", name: "title", widget: "string"}
-                 - {label: "Prize", name: "prize", widget: "string"}
-                 - {label: "Description", name: "description", widget: "string"}
-         
-         - name: "sponsors"
-           label: "Global Sponsors"
-           file: "content/global/sponsors.json"
-           fields:
-             - label: "Sponsors"
-               name: "sponsors"
-               widget: "list"
-               fields:
-                 - {label: "Name", name: "name", widget: "string"}
-                 - {label: "Logo", name: "logo", widget: "image", required: false}
-                 - {label: "URL", name: "url", widget: "string", required: false}
-         
-         - name: "partners"
-           label: "Global Partners"
-           file: "content/global/partners.json"
-           fields:
-             - label: "Partners"
-               name: "partners"
-               widget: "list"
-               fields:
-                 - {label: "Name", name: "name", widget: "string"}
-                 - {label: "Logo", name: "logo", widget: "image", required: false}
-                 - {label: "URL", name: "url", widget: "string", required: false}
+  - name: "global"
+    label: "Global Settings"
+    files:
+      - name: "awards"
+        label: "Global Awards"
+        file: "content/global/awards.json"
+        fields:
+          - label: "Awards"
+            name: "awards"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Prize", name: "prize", widget: "string"}
+              - {label: "Description", name: "description", widget: "string"}
+      
+      - name: "sponsors"
+        label: "Global Sponsors"
+        file: "content/global/sponsors.json"
+        fields:
+          - label: "Sponsors"
+            name: "sponsors"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Logo", name: "logo", widget: "image", required: false}
+              - {label: "URL", name: "url", widget: "string", required: false}
+      
+      - name: "partners"
+        label: "Global Partners"
+        file: "content/global/partners.json"
+        fields:
+          - label: "Partners"
+            name: "partners"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Logo", name: "logo", widget: "image", required: false}
+              - {label: "URL", name: "url", widget: "string", required: false}

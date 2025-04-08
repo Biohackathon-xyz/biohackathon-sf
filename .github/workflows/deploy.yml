@@ -44,7 +44,7 @@ jobs:
           mkdir -p dist/admin
           cp -R public/admin/* dist/admin/
           
-      - name: Copy content folder if using Git-based CMS
+      - name: Copy content folder for Git-based CMS
         run: |
           mkdir -p dist/content
           cp -R content/* dist/content/ || echo "No content to copy"
