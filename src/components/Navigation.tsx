@@ -23,11 +23,21 @@ const Navigation: React.FC = () => {
     { name: 'Participation', href: '#participation' },
     { name: 'Previous Years', href: '#previous-years' },
     { name: 'Sponsors', href: '#sponsors' },
-    { name: 'Host In Your City', href: '#host-in-your-city' },
   ];
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  // Function to scroll to the host section
+  const scrollToHostSection = () => {
+    const element = document.getElementById('host-in-your-city');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    if (mobileMenuOpen) {
+      setMobileMenuOpen(false);
+    }
   };
 
   return (
@@ -65,6 +75,14 @@ const Navigation: React.FC = () => {
                       </a>
                     </li>
                   ))}
+                  <li>
+                    <Button 
+                      onClick={scrollToHostSection}
+                      className="w-full bg-biohack-primary text-white hover:bg-biohack-dark"
+                    >
+                      Host In Your City
+                    </Button>
+                  </li>
                 </ul>
               </div>
             )}
@@ -87,6 +105,13 @@ const Navigation: React.FC = () => {
                 ))}
               </NavigationMenuList>
             </NavigationMenu>
+
+            <Button 
+              onClick={scrollToHostSection}
+              className="bg-biohack-primary text-white hover:bg-biohack-dark"
+            >
+              Host In Your City
+            </Button>
           </div>
         )}
       </div>
