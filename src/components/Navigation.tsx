@@ -18,26 +18,13 @@ const Navigation: React.FC = () => {
   const isMobile = useIsMobile();
   
   const navigationItems = [
-    { name: 'Cities', href: '#cities' },
     { name: 'Awards', href: '#awards' },
     { name: 'Participation', href: '#participation' },
-    { name: 'Previous Years', href: '#previous-years' },
     { name: 'Sponsors', href: '#sponsors' },
   ];
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
-  };
-
-  // Function to scroll to the host section
-  const scrollToHostSection = () => {
-    const element = document.getElementById('host-in-your-city');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    if (mobileMenuOpen) {
-      setMobileMenuOpen(false);
-    }
   };
 
   return (
@@ -77,10 +64,12 @@ const Navigation: React.FC = () => {
                   ))}
                   <li>
                     <Button 
-                      onClick={scrollToHostSection}
+                      asChild
                       className="w-full bg-biohack-primary text-white hover:bg-biohack-dark"
                     >
-                      Host In Your City
+                      <a href="https://lu.ma/biohacksf25" target="_blank" rel="noopener noreferrer">
+                        Register
+                      </a>
                     </Button>
                   </li>
                 </ul>
@@ -107,10 +96,12 @@ const Navigation: React.FC = () => {
             </NavigationMenu>
 
             <Button 
-              onClick={scrollToHostSection}
+              asChild
               className="bg-biohack-primary text-white hover:bg-biohack-dark"
             >
-              Host In Your City
+              <a href="https://lu.ma/biohacksf25" target="_blank" rel="noopener noreferrer">
+                Register
+              </a>
             </Button>
           </div>
         )}

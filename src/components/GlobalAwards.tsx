@@ -46,7 +46,7 @@ const GlobalAwards: React.FC = () => {
           Awards
         </h2>
         <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12">
-          In addition to city-specific prizes, participants will compete for these prestigious global awards
+          In addition to city-specific prizes, participants will compete for <a href="https://global.biohackathon.xyz/" className="text-biohack-primary hover:underline">global awards</a>
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {awards?.map((award) => (

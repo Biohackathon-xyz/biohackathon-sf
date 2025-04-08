@@ -1,6 +1,6 @@
 
 import React from 'react';
-import Header from '@/components/Header';
+import Navigation from '@/components/Navigation';
 import GlobalAwards from '@/components/GlobalAwards';
 import Sponsors from '@/components/Sponsors';
 import Partners from '@/components/Partners';
@@ -12,7 +12,7 @@ import Schedule from '@/components/Schedule';
 const Index = () => {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      <Navigation />
       <main>
         <section id="city-example" className="pt-20 mt-4">
           <CityExample />

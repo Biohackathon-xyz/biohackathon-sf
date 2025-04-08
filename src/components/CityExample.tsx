@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -6,7 +7,7 @@ const CityExample: React.FC = () => {
     <section className="py-16">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-smythe text-center mb-6">
-          San Francisco Biohackathon.xyz
+          San Francisco <a href="https://global.biohackathon.xyz/" className="text-biohack-primary hover:underline">Global Biohackathon.xyz</a>
         </h2>
         
         <div className="border-2 border-dashed border-gray-300 p-4 rounded-lg mb-12">
